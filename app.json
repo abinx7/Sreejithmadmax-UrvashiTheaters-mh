@@ -73,7 +73,7 @@
         },
         "SPELL_CHECK_REPLY": {
             "description": "Spelling correct",
-            "value": "False",
+            "value": "True",
             "required": false
         },
         "SINGLE_BUTTON": {
