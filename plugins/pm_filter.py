@@ -373,7 +373,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-
+        buttons = [
+                    [
+                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
+                    ],
+                    [
+                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='gxneopm')
+                    ]
+                    ]
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
@@ -417,6 +425,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
+        buttons = [
+                    [
+                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
+                    ],
+                    [
+                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='gxneopm')
+                    ]
+                    ]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
