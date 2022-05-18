@@ -62,19 +62,23 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "📣 𝙹𝙾𝙸𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 📣", url=invite_link.invite_link ),
-                InlineKeyboardButton(
-                    "⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", callback_data=f"checksub#{message.command[1]}")
+                    " 📢 Join Channel 📢", url=invite_link.invite_link
+                )
             ]
         ]
 
         if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton("😒 Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="neosub")])
+            try:
+            	kk, file_id = message.command[1].split("_", 1)
+            	pre = 'checksubp' if kk == 'filep' else 'checksub' 
+            	btn.append([InlineKeyboardButton(" 🔄 Try Again 🔄", callback_data=f"{pre}#{file_id}")])
+            except IndexError:
+                btn.append([InlineKeyboardButton(" 🔄 Try Again 🔄", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="<b>--♦️ READ THIS INSTRUCTION ♦️--\n\n🗣 നിങ്ങൾ ചോദിക്കുന്ന സിനിമകൾ നിങ്ങൾക്ക് ലഭിക്കണം എന്നുണ്ടെങ്കിൽ നിങ്ങൾ ഞങ്ങളുടെ ചാനലിൽ ജോയിൻ ചെയ്തിരിക്കണം.ജോയിൻ ചെയ്യാൻ --(📢 Join Channel 📢)-- എന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്യാവുന്നതാണ്.\n🗣 ജോയിൻ ചെയ്ത ശേഷം --(🔄 Try Again 🔄)-- എന്ന ബട്ടണിൽ അമർത്തിയാൽ നിങ്ങൾക്ക് ഞാൻ ആ സിനിമ ഫയൽ അയച്ചു തരുന്നതാണ്..😍\n\n🗣 In Order To Get The Movie Requested By You in Our Group, You Must Have To Join Our Official Channel First By Clicking (📢 Join Channel 📢) Button.🗣 After That, Click --(🔄 Try Again 🔄)-- Button. I'll Send You That Movie File📂</b>".format(message.from_user.mention),
+            text="**--♦️ READ THIS INSTRUCTION ♦️--\n\n🗣 നിങ്ങൾ ചോദിക്കുന്ന സിനിമകൾ നിങ്ങൾക്ക് ലഭിക്കണം എന്നുണ്ടെങ്കിൽ നിങ്ങൾ ഞങ്ങളുടെ ചാനലിൽ ജോയിൻ ചെയ്തിരിക്കണം.ജോയിൻ ചെയ്യാൻ --(📢 Join Channel 📢)-- എന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്യാവുന്നതാണ്.\n🗣 ജോയിൻ ചെയ്ത ശേഷം --(🔄 Try Again 🔄)-- എന്ന ബട്ടണിൽ അമർത്തിയാൽ നിങ്ങൾക്ക് ഞാൻ ആ സിനിമ ഫയൽ അയച്ചു തരുന്നതാണ്..😍\n\n🗣 In Order To Get The Movie Requested By You in Our Group, You Must Have To Join Our Official Channel First By Clicking (📢 Join Channel 📢) Button.🗣 After That, Click --(🔄 Try Again 🔄)-- Button. I'll Send You That Movie File📂**",
             reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="html"
+            parse_mode="markdown"
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
