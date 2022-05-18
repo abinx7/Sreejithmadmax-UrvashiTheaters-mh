@@ -64,7 +64,7 @@
         },
         "SUPPORT_CHAT": {
             "description": "Username of a Support Group / ADMIN. ( Should be username without @ and not ID)",
-            "value": "BlinderTG"
+            "value": "PowerOfTg"
         },
         "P_TTI_SHOW_OFF": {
             "description": "pm senting",
