@@ -143,8 +143,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase')
-            await asyncio.sleep(10)
+            k = await query.message.edit('<b><i><u>📣 This Movie Not Found In Data... Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ് അയച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>')
+            await asyncio.sleep(30)
             await k.delete()
 
 
@@ -445,7 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -543,7 +543,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -562,7 +562,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -761,7 +761,7 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = await msg.reply("<b><i><u>📣 This Movie Not Found In Data... Please Request Here👉 @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ്അ യച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>")
-        await asyncio.sleep(60)
+        await asyncio.sleep(30)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -790,7 +790,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply("<b><i><u>📣 This Movie Not Found In Data... Please Request Here👉  @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ് അയച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>")
-        await asyncio.sleep(60)
+        await asyncio.sleep(30)
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
