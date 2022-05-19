@@ -29,7 +29,7 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
-NORGE_IMG = f"https://telegra.ph/file/4f836a500ca6f17e9bcf2.jpg"
+NORGE_IMG = f"https://telegra.ph/file/7e218e7bc97387a903ddb.jpg"
 
 @Client.on_message(filters.group & filters.text & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
@@ -779,7 +779,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴅᴜʟǫᴜʀ](https://t.me/GTDulquarbot)\n┗ 🍁 ᴄʜᴀɴɴᴇʟ : [ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ](https://t.me/CLMlinkz)\n\nᴀꜰᴛᴇʀ 30 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\n<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  [ᴄɪɴɪᴍᴀ ʟᴏᴋʜᴀᴍ ²ᐧ⁰](https://t.me/CinimaLokham)</i></b>"
+        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ƈɨռɖɛʀɛʟʟǟ™](https://t.me/Imdbfilter_bot)\n┗ 🍁 ᴄʜᴀɴɴᴇʟ : [ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ](https://t.me/UrvashiTheaters)\n\nᴀꜰᴛᴇʀ 30 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\n<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  [ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ](https://t.me/UrvashiTheaters)</i></b>"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
