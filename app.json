@@ -24,37 +24,37 @@
         },
         "API_ID": {
             "description": "Get this value from https://my.telegram.org",
-            "value": "True",
+            "value": "6236237",
             "required": true
         },
         "API_HASH": {
             "description": "Get this value from https://my.telegram.org",
-            "value": "True",
+            "value": "11cdaeb5dfc331283b8c9799e22782a4",
             "required": true
         },
         "CHANNELS": {
             "description": "Username or ID of channel or group. Separate multiple IDs by space.",
-            "value": "True",
+            "value": "-1001798149129 -1001537553966 -1001590745365 -1001604177014 -1001757610257 -1001504948479",
             "required": false
         },
         "ADMINS": {
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
-            "value": "True",
+            "value": "1961429680",
             "required": true
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "value": "True",
+            "value": "https://telegra.ph/file/f6f4d7cf4452f2c63dd3d.jpg",
             "required": false
         },
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
-            "value": "True",
+            "value": "-1001584278575",
             "required": true
         },
         "AUTH_USERS": {
             "description": "Username or ID of users to give access of inline search. Separate multiple users by space.\nLeave it empty if you don't want to restrict bot usage.",
-            "value": "True",
+            "value": "1961429680",
             "required": false
         },
         "AUTH_CHANNEL": {
@@ -68,7 +68,7 @@
         },
         "DATABASE_NAME": {
             "description": "Name of the database in mongoDB. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
-            "value": "True",
+            "value": "Imdbfiltwerbot",
             "required": false
         },
         "SUPPORT_CHAT": {
@@ -117,7 +117,7 @@
         },
         "CUSTOM_FILE_CAPTION": {
             "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
-            "value": "",
+            "value": "<code>{file_name}</code>",
             "required": false
         },
         "COLLECTION_NAME": {
