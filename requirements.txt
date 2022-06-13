@@ -5,5 +5,5 @@ motor==3.0.0
 marshmallow==3.14.1
 umongo==3.1.0
 requests==2.27.1
-bs4==0.0.1
-imdbpy==2021.4.18
+bs4
+imdbpy
