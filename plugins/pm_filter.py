@@ -732,21 +732,9 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
-        btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
-        )
-        btn.insert(0,
-            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
-        )
     else:
         btn.append(
             [InlineKeyboardButton(text="🚫 ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫", callback_data="gxneopm")]
-        )
-        btn.insert(0,
-            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
-        )
-        btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
