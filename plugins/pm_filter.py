@@ -782,21 +782,28 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"<b><u>⚠️ ɪ𝙵 ʏᴏᴜ ᴅᴏɴ'ᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 {search} ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ. ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b></u>"
     if imdb and imdb.get('poster'):
         try:
-            fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                      reply_markup=InlineKeyboardMarkup(btn))
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(160)
+            await hehe.delete()
+            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(160)
+            await hmm.delete()
+            await message.delete()
         except Exception as e:
             logger.exception(e)
-            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(160)
+            await fek.delete()
+            await msg.delete()
     else:
-        fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    
-    await asyncio.sleep(200)
-    await fmsg.delete()
-
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(160)
+        await fuk.delete()
+        await msg.delete()
     if spoll:
         await msg.message.delete()
 
