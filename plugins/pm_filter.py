@@ -65,7 +65,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫{get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -86,9 +86,14 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🎁 𝚃𝙸𝙿𝚂', 'movieinfo'),
-            InlineKeyboardButton(f'🕊️ 𝙼𝙾𝚅𝙸𝙴 🕊️', 'movss'),
-            InlineKeyboardButton(f'𝚂𝙴𝚁𝙸𝙴𝚂 🎁', 'moviis')
+            InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
+        ]
+    )
+    btn.insert(1, 
+        [
+            InlineKeyboardButton(f'🎁 ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'🕊️ 𝚃𝙸𝙿𝚂 🕊️', 'tipss'),
+            InlineKeyboardButton(f'𝙸𝙽𝙵𝙾 🎁', 'infoo')
         ]
     )
 
@@ -108,7 +113,7 @@ async def next_page(bot, query):
             [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="gxneopm")]
+            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
         )
     elif off_set is None:
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),
@@ -116,7 +121,7 @@ async def next_page(bot, query):
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
         btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")])
         btn.insert(0,
-            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="gxneopm")]
+            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
         )
     else:
         btn.append(
@@ -130,7 +135,7 @@ async def next_page(bot, query):
             [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="gxneopm")]
+            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
         )
     try:
         await query.edit_message_reply_markup(
@@ -159,8 +164,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b><i><u>📣 This Movie Not Found In Data... Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ് അയച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>')
-            await asyncio.sleep(30)
+            k = await query.message.edit('<b>🔰 Movie Not available Reasons\n\n<i>1) O.T.T Or DVD Not Released\n\n2) Type Name With Year</i> \n\n3) Movie Is Not Available in the database Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\nഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ @UrvashiTheaters</b> 💌')
+            await asyncio.sleep(10)
             await k.delete()
 
 
@@ -445,13 +450,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🕊️ 𝙶𝚛𝚘𝚞𝚙 ', url='https://t.me/UrvashiTheaters'),
-            InlineKeyboardButton(' 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 🕊️', url='https://t.me/movies_club_2019')
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🦋 𝚂𝚃𝙰𝚃𝚂 ', callback_data='stats'),
-            InlineKeyboardButton(' 𝙰𝚋𝚘𝚞𝚝 🦋', callback_data='about')
+            InlineKeyboardButton('👥 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/movies_club_2019'),
+            InlineKeyboardButton('ɢʀᴏᴜᴘ 👥', url='https://t.me/UrvashiTheaters')
             ],[
-            InlineKeyboardButton('➕  𝙰𝚍𝚍 𝙼𝚎 𝚃𝚘 𝚈𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙  ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')            
+            InlineKeyboardButton('🦋 ꜱᴛᴀᴛꜱ ', callback_data='stats'),
+            InlineKeyboardButton(' ᴀʙᴏᴜᴛ 🦋', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -664,8 +669,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
-    
+    elif query.data == 'tipss':
+        await query.answer("🔰 Ask with correct spelling\n🔰 Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n🔰 For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021\n\tⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
+    elif query.data == 'reqst11':
+        await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want And Start The Bot ⬇️", True)
+    elif query.data == 'infoo':
+        await query.answer("⚠︎ Information ⚠︎\n\nAfter 1 minute this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
+    elif query.data == 'moviess':
+        await query.answer("ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴍᴀsᴛᴇʀ ᴏʀ ᴍᴀsᴛᴇʀ 2021\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
+    elif query.data == 'seriess':
+        await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
+    elif query.data == 'spellingg':
+        await query.answer("⚠️Search Google.com Find the Correct Spelling of Movie Name and Year. Type that in Group to get the Files⚠️", True)
+    elif query.data == "neosub":
+        await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥",show_alert=True)
+    try: await query.answer('Piracy Is Crime') 
+    except: pass
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
@@ -693,7 +712,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫{get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -715,9 +734,9 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🎁 𝚃𝙸𝙿𝚂', 'movieinfo'),
-            InlineKeyboardButton(f'🕊️ ᴍᴏᴠɪᴇ 🕊️', 'movss'),
-            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🎁', 'moviis')
+            InlineKeyboardButton(f'🎁 ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'🕊️ 𝚃𝙸𝙿𝚂 🕊️', 'tipss'),
+            InlineKeyboardButton(f'𝙸𝙽𝙵𝙾 🎁', 'infoo')
         ]
     )
 
@@ -732,14 +751,14 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="gxneopm")]
+            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="🚫 ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫", callback_data="gxneopm")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="gxneopm")]
+            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
         )
         btn.append(
             [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
@@ -809,8 +828,8 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("<b><i><u>📣 This Movie Not Found In Data... Please Request Here👉 @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ്അ യച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>")
-        await asyncio.sleep(30)
+        k = await msg.reply("<b><i><u>🔰 Movie Not available Reasons\n\n<i>1) O.T.T Or DVD Not Released\n\n2) Type Name With Year</i> \n\n3) Movie Is Not Available in the database Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\nഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ @UrvashiTheaters</b> 💌')
+        await asyncio.sleep(10)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
