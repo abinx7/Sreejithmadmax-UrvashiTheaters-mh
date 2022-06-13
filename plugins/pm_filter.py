@@ -109,11 +109,13 @@ async def next_page(bot, query):
              InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
              InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data="close_pages")]
         )
-        btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
-        )
-        btn.insert(0,
-            [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
+        btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
+        ]
+    )
+    btn.insert(1, 
+        [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters)]
         )
     elif off_set is None:
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),
@@ -132,7 +134,7 @@ async def next_page(bot, query):
             ],
         )
         btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
+            [InlineKeyboardButton("hai",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
