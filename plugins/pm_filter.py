@@ -29,7 +29,7 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
-NORGE_IMG = f"https://telegra.ph/file/7e218e7bc97387a903ddb.jpg"
+NORGE_IMG = f"https://telegra.ph/file/4f836a500ca6f17e9bcf2.jpg"
 
 @Client.on_message(filters.group & filters.text & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
@@ -42,7 +42,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(f"Hey {query.from_user.first_name} This Not For You 🤧\n\n{query.message.reply_to_message.from_user.first_name} Only Can Use This🙂\n\nʀᴇǫᴜᴇsᴛ ʏᴏᴜʀ ᴏᴡɴ 🥰\n\n© 𝚄𝚁𝚅𝙰𝚂𝙷𝙸 𝚃𝙷𝙴𝙰𝚃𝙴𝚁𝚂", show_alert=True)
+        return await query.answer(f"മോനെ {query.from_user.first_name} ഇത് നിനക്കുലതല്ല 🤭\n\n{query.message.reply_to_message.from_user.first_name} ന്റെ റിക്വസ്റ്റ് ആണ് ഇത് 🙂\n\nʀᴇǫᴜᴇsᴛ ʏᴏᴜʀ ᴏᴡɴ 🥰\n\n© ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -65,7 +65,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"▫{get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -86,23 +86,18 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🎭 {search} 🎭', 'reqst11')
-        ]
-    )
-    btn.insert(1, 
-        [
-            InlineKeyboardButton(f'🎁 ғɪʟᴇs: {len(files)}', 'dupe'),
-            InlineKeyboardButton(f'🕊️ 𝚃𝙸𝙿𝚂 🕊️', 'tipss'),
-            InlineKeyboardButton(f'𝙸𝙽𝙵𝙾 🎁', 'infoo')
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
     )
 
-    if 0 < offset <= 5:
+    if 0 < offset <= 7:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 5
+        off_set = offset - 7
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -113,7 +108,6 @@ async def next_page(bot, query):
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),
                     InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
-        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")])
     else:
         btn.append(
             [
@@ -149,7 +143,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b>🔰 Movie Not available Reasons\n\n<i>1) O.T.T Or DVD Not Released\n\n2) Type Name With Year</i> \n\n3) Movie Is Not Available in the database Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\nഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ @UrvashiTheaters</b> 💌')
+            k = await query.message.edit('This Movie Not Found In DataBase')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -363,15 +357,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
-                    [
-                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
-                    ],
-                    [
-                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='gxneopm')
-                    ]
-                    ]
+
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
@@ -415,15 +401,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [
-                    [
-                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
-                    ],
-                    [
-                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='gxneopm')
-                    ]
-                    ]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -435,14 +412,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('👥 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/movies_club_2019'),
-            InlineKeyboardButton('ɢʀᴏᴜᴘ 👥', url='https://t.me/UrvashiTheaters')
-            ],[
-            InlineKeyboardButton('🦋 ꜱᴛᴀᴛꜱ ', callback_data='stats'),
-            InlineKeyboardButton(' ᴀʙᴏᴜᴛ 🦋', callback_data='about')
-        ]]
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='help')
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -468,7 +439,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', callback_data='gxneopm'),
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -477,19 +449,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "gxneopm":
-        await query.answer("തെറ്റ് ചെയ്യാത്തവരായി ആരുമില്ല ഗോപു 🕊️", show_alert=True)
+        await query.answer("ക്യാപ്ഷയിൽ കാണുന്ന username അല്ലകിൽ permanent ലിങ്ക് ക്ലിക്ക് ചെയ്താൽ ഡയറക്റ്റ് എന്റെ ഡിഎം ഇലോട്ടു വെരും അത്കൊണ്ട് അവുടെ ക്ലിക്ക് ചെയ്യ് 😐\n\nദയവു ചെയ്തു മൂവി ഒന്നും വന്നു ചോദിക്കല്ലേ ....😑", show_alert=True)
 
     elif query.data == "movieinfo":
-        await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nɪꜰ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ꜱᴇᴇ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ / sᴇʀɪᴇs ꜰɪʟᴇ, ʟᴏᴏᴋ ᴀᴛ ᴛʜᴇ ɴᴇxᴛ ᴘᴀɢᴇ\n\n© ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", show_alert=True)
+        await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nᴀꜰᴛᴇʀ 30 ᴍɪɴᴜᴛᴇᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\nɪꜰ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ꜱᴇᴇ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ / sᴇʀɪᴇs ꜰɪʟᴇ, ʟᴏᴏᴋ ᴀᴛ ᴛʜᴇ ɴᴇxᴛ ᴘᴀɢᴇ\n\n© ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ", show_alert=True)
 
     elif query.data == "movss":
-        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©  ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", show_alert=True)
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©  ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ", show_alert=True)
 
     elif query.data == "moviis":  
-        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", show_alert=True)   
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ", show_alert=True)   
 
     elif query.data == "neosub":
-        await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത്.. അതുകൊണ്ട് ജോയിൻ ആവാൻ മറക്കല്ലേ 💪\n\nIf Chance To Get Copyright To Our Group..... That Time We Provide New Group Link Through The Channel So Please Join Channel🤧",show_alert=True)
+        await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥",show_alert=True)
                            
     elif query.data == "close_pages":
         await query.message.delete()
@@ -507,8 +479,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/'),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]] 
@@ -566,7 +538,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -585,7 +557,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -654,22 +626,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    elif query.data == 'tipss':
-        await query.answer("🔰 Ask with correct spelling\n🔰 Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n🔰 For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021\n\tⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
-    elif query.data == 'reqst11':
-        await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want And Start The Bot ⬇️", True)
-    elif query.data == 'infoo':
-        await query.answer("⚠︎ Information ⚠︎\n\nAfter 1 minute this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
-    elif query.data == 'moviess':
-        await query.answer("ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴍᴀsᴛᴇʀ ᴏʀ ᴍᴀsᴛᴇʀ 2021\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
-    elif query.data == 'seriess':
-        await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸ✨️ഉർവശി തീയറ്റേഴ്‌സ്✨️", True)
-    elif query.data == 'spellingg':
-        await query.answer("⚠️Search Google.com Find the Correct Spelling of Movie Name and Year. Type that in Group to get the Files⚠️", True)
-    elif query.data == "neosub":
-        await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥",show_alert=True)
-    try: await query.answer('Piracy Is Crime') 
-    except: pass
+    await query.answer('Piracy Is Crime')
+    
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
@@ -697,7 +655,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"▫{get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -719,9 +677,9 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🎁 ғɪʟᴇs: {len(files)}', 'dupe'),
-            InlineKeyboardButton(f'🕊️ 𝚃𝙸𝙿𝚂 🕊️', 'tipss'),
-            InlineKeyboardButton(f'𝙸𝙽𝙵𝙾 🎁', 'infoo')
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
     )
 
@@ -734,7 +692,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🚫 ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫", callback_data="gxneopm")]
+            [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -771,24 +729,20 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b><u>⚠️ ɪ𝙵 ʏᴏᴜ ᴅᴏɴ'ᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 {search} ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ. ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b></u>"
+        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴅᴜʟǫᴜʀ](https://t.me/GTDulquarbot)\n┗ 🍁 ᴄʜᴀɴɴᴇʟ : [ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ](https://t.me/CLMlinkz)\n\nᴀꜰᴛᴇʀ 30 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\n<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  [ᴄɪɴɪᴍᴀ ʟᴏᴋʜᴀᴍ ²ᐧ⁰](https://t.me/CinimaLokham)</i></b>"
     if imdb and imdb.get('poster'):
         try:
-            fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    
-    await asyncio.sleep(60)
-    await fmsg.delete()
-
+        await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
 
@@ -801,9 +755,16 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
-        await asyncio.sleep(8)
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]        
+        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(40)
         await k.delete()
+        await msg.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -830,20 +791,30 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("<b><i><u>📣 This Movie Not Found In Data... Please Request Here👉  @UrvashiTheaters_Requests To Add This Movie To My Db 🔞\n📣 ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ൽ മെസ്സേജ് അയച് ആ സിനിമ ആഡ് ആക്കാൻ പറയു \n©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @UrvashiTheaters</b></i></u>")
-        await asyncio.sleep(30)
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]           
+        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(40)
         await k.delete()
+        await msg.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
-                    reply_markup=InlineKeyboardMarkup(btn))
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+        InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+    ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+    ]]
+    k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))    
+    await asyncio.sleep(40)
+    await k.delete()
+    await msg.delete()
+    return
+
 
 
 async def manual_filters(client, message, text=False):
