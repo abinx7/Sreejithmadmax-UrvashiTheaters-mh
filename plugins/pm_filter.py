@@ -114,7 +114,7 @@ async def next_page(bot, query):
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="neosub"),
                     InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="neosub"),
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
-        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/redirecturvashi")])
+        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")])
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
         )
@@ -741,7 +741,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="neosub"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="neosub"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
         btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi")]
+            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
@@ -751,7 +751,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data="neosub")]
         )
         btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi")]
+            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
