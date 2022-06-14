@@ -20,7 +20,7 @@ async def save_group(bot, message):
             await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, r_j))       
             await db.add_chat(message.chat.id, message.chat.title)
         if message.chat.id in temp.BANNED_CHATS:
-            # Inspired from a boat of a banana tree
+            # Inspired from a bot of a banana tree
             buttons = [[
                 InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
@@ -37,12 +37,12 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-            InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('📢 Updates', url='https://t.me/TeamEvamaria')
+            InlineKeyboardButton('📮 Qᴜᴇʀʏ', url=f"https://t.me/{temp.U_NAME}?start=help"),
+            InlineKeyboardButton('🎁 ɪɴꜰᴏ', url='https://t.me/UrvashiTheaters')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+            text=f"<b>Hey {query.from_user.first_name} Thankyou For Adding Me In\n\n〓〓〓 {message.chat.title} 〓〓〓❣️\n\n</b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
