@@ -37,13 +37,15 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('🕊️ 𝙶𝚛𝚘𝚞𝚙 ', url='https://t.me/UrvashiTheaters'),
-            InlineKeyboardButton(' 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 🕊️', url='https://t.me/movies_club_2019')
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🦋 𝚂𝚃𝙰𝚃𝚂 ', callback_data='stats'),
-            InlineKeyboardButton(' 𝙰𝚋𝚘𝚞𝚝 🦋', callback_data='about')
+            InlineKeyboardButton('👥 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/movies_club_2019'),
+            InlineKeyboardButton('ɢʀᴏᴜᴘ 👥', url='https://t.me/UrvashiTheaters')
             ],[
-            InlineKeyboardButton('➕  𝙰𝚍𝚍 𝙼𝚎 𝚃𝚘 𝚈𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙  ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')            
+            InlineKeyboardButton('🦋 ꜱᴛᴀᴛꜱ ', callback_data='stats'),
+            InlineKeyboardButton(' ᴀʙᴏᴜᴛ 🦋', callback_data='about')
+            ],[
+            InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ᴛʜᴇ ᴘᴀɢᴇ ❌', callback_data='close_pages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -83,13 +85,15 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('🕊️ 𝙶𝚛𝚘𝚞𝚙 ', url='https://t.me/UrvashiTheaters'),
-            InlineKeyboardButton(' 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 🕊️', url='https://t.me/movies_club_2019')
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🦋 𝚂𝚃𝙰𝚃𝚂 ', callback_data='stats'),
-            InlineKeyboardButton(' 𝙰𝚋𝚘𝚞𝚝 🦋', callback_data='about')
+            InlineKeyboardButton('👥 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/movies_club_2019'),
+            InlineKeyboardButton('ɢʀᴏᴜᴘ 👥', url='https://t.me/UrvashiTheaters')
             ],[
-            InlineKeyboardButton('➕  𝙰𝚍𝚍 𝙼𝚎 𝚃𝚘 𝚈𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙  ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')            
+            InlineKeyboardButton('🦋 ꜱᴛᴀᴛꜱ ', callback_data='stats'),
+            InlineKeyboardButton(' ᴀʙᴏᴜᴛ 🦋', callback_data='about')
+            ],[
+            InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ᴛʜᴇ ᴘᴀɢᴇ ❌', callback_data='close_pages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
