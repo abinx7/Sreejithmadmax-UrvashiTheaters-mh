@@ -42,7 +42,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(f"മോനെ {query.from_user.first_name} ഇത് നിനക്കുലതല്ല 🤭\n\n{query.message.reply_to_message.from_user.first_name} ന്റെ റിക്വസ്റ്റ് ആണ് ഇത് 🙂\n\nʀᴇǫᴜᴇsᴛ ʏᴏᴜʀ ᴏᴡɴ 🥰\n\n© ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ", show_alert=True)
+        return await query.answer(f"മോനെ {query.from_user.first_name} ഇത് നിനക്കുള്ളതല്ല 🤭\n\n{query.message.reply_to_message.from_user.first_name} ന്റെ റിക്വസ്റ്റ് ആണ് ഇത് 🙂\n\nʀᴇǫᴜᴇsᴛ ʏᴏᴜʀ ᴏᴡɴ Movie 🥰\n\n© ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -65,7 +65,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫{get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -86,28 +86,38 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'movieinfo'),
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
-            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
+            InlineKeyboardButton(f'🎁 ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'🕊️ ᴍᴏᴠɪᴇ 🕊️', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🎁', 'moviis')
         ]
     )
 
-    if 0 < offset <= 7:
+    if 0 < offset <= 5:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 7
+        off_set = offset - 5
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
              InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data="close_pages")]
         )
+        btn.append(
+            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/redirecturvashi")]
+        )
+        btn.insert(0,
+            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")]
+        )
     elif off_set is None:
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),
                     InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
+        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/redirecturvashi")])
+        btn.insert(0,
+            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")]
+        )
     else:
         btn.append(
             [
@@ -115,6 +125,12 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
                 InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
+        )
+        btn.append(
+            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/redirecturvashi")]
+        )
+        btn.insert(0,
+            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")]
         )
     try:
         await query.edit_message_reply_markup(
@@ -690,9 +706,21 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
+        btn.append(
+            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi")]
+        )
+        btn.insert(0,
+            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")]
+        )
     else:
         btn.append(
             [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data="pages")]
+        )
+        btn.append(
+            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi")]
+        )
+        btn.insert(0,
+            [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
