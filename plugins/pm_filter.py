@@ -652,7 +652,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'spellingg':
         await query.answer("⚠️Search Google.com Find the Correct Spelling of Movie Name and Year. Type that in Group to get the Files⚠️", True)
     elif query.data == "neosub":
-        await query.answer(f"{query.from_user.first_name} ബ്രോ മൊത്തത്തിൽ {len(files)} ഫയൽസ് ലിങ്ക് ഉണ്ട് നിങ്ങൾക്ക് വേണ്ടുന്ന ലിങ്കിൽ മാത്രം ക്ലിക്ക് ചെയ്യൂ 😒",show_alert=True)
+        await query.answer(f"{query.from_user.first_name} ബ്രോ ഫയൽസ് ലിങ്ക് ബട്ടനിൽ മാത്രം ക്ലിക്ക് ചെയ്യൂ 😒... \n\nകൗതുകം ലേശം കൂടുതലായതുകൊണ്ടാണോ...എല്ലാ ബട്ടണും ട്രൈ ചെയ്യുന്നേ..😂",show_alert=True)
     try: await query.answer('Piracy Is Crime') 
     except: pass
 
