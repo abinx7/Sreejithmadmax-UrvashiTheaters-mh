@@ -840,9 +840,9 @@ async def advantage_spell_chok(msg):
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="🚫 Close 🚫", callback_data=f'spolling#{user}#close_spellcheck')])
     btn.insert(0,
-        [InlineKeyboardButton("🕊️ UrvashiTheaters 🕊️", url="https://t.me/UrvashiTheaters")]
+        [InlineKeyboardButton("📮 ഉർവശിതീയറ്റേഴ്‌സ് 📮", url="https://t.me/UrvashiTheaters")]
     )
-    await msg.reply_photo(photo=NORGE_IMG, caption="<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
+    await msg.reply_photo(photo="https://telegra.ph/file/28b5224d883a610d26ee8.jpg", caption="<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
