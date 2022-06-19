@@ -807,12 +807,11 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-    
+    if spoll:
+        await msg.message.delete() 
+  
     await asyncio.sleep(60)
     await fmsg.delete()
-
-    if spoll:
-        await msg.message.delete()
 
 async def advantage_spell_chok(msg):
     query = re.sub(
