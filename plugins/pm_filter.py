@@ -793,26 +793,23 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"〓〓〓 <b>[{search}](https://t.me/UrvashiTheaters)</b> 〓〓〓\n\n<b>⭐️ ɪᴍᴅʙ N/A | ⏰ ʀᴜɴ N/A ᴍɪɴ\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : [N/A](https://t.me/UrvashiTheaters)\n\n● <code>Thriller, Family, Drama</code></b>\n● <code>N/A</code>\n\n📖 sᴛᴏʀʏ : <code>N/A</code>\n\n<b>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ [{message.chat.title}](https://t.me/UrvashiTheaters)</b>"
+        cap = f"Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
-            fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fmsg = await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        fmsg = await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-    
-    await asyncio.sleep(60)
-    await fmsg.delete()
-
+        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
+
 
 async def advantage_spell_chok(msg):
     query = re.sub(
