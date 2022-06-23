@@ -869,7 +869,7 @@ async def advantage_spell_chok(msg):
     btn.insert(0,
         [InlineKeyboardButton("📮 ഉർവശിതീയറ്റേഴ്‌സ് 📮", url="https://t.me/UrvashiTheaters")]
     )
-    await msg.reply_photo(photo=imdb.get('poster'), caption="<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
+    await msg.reply_photo(photo="https://telegra.ph/file/28b5224d883a610d26ee8.jpg", caption="<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
