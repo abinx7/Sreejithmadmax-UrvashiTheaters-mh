@@ -155,10 +155,16 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{imdb.get('title')}",
+                    text=f"{imdb.get('title')} - {imdb.get('year')}",
                     url=imdb['url'],
                 )
-            ]
+            ],
+            [
+                InlineKeyboardButton(
+                    text=f"Projects Channel",
+                    callback_data="close_pages"
+                )
+            ],
         ]
     message = quer_y.message.reply_to_message or quer_y.message
     if imdb:
