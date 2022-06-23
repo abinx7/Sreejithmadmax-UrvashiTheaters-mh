@@ -161,11 +161,11 @@ async def advantage_spoll_choker(bot, query):
         else:
             button = InlineKeyboardMarkup(
         [[
-           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
+           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q")
         ],
         [
-           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q={search}"),
-           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
+           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q"),
+           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search")
         ]])
         k = await msg.reply(f"Hey, Your word <b>{search}</b> is No Movie/Series Related to the Given Word Was Found 🥺\n\n<s>Please Go to Google and Confirm the Correct Spelling 🥺🙏</s>", reply_markup=button)
         await asyncio.sleep(60)
@@ -834,11 +834,11 @@ async def advantage_spell_chok(msg):
     if not g_s:
         button = InlineKeyboardMarkup(
         [[
-           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
+           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q")
         ],
         [
-           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q={search}"),
-           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
+           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q"),
+           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search")
         ]])
         k = await msg.reply(f"Hey, Your word <b>{search}</b> is No Movie/Series Related to the Given Word Was Found 🥺\n\n<s>Please Go to Google and Confirm the Correct Spelling 🥺🙏</s>", reply_markup=button)
         await asyncio.sleep(60)
@@ -871,11 +871,11 @@ async def advantage_spell_chok(msg):
     if not movielist:
         button = InlineKeyboardMarkup(
         [[
-           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
+           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q")
         ],
         [
-           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q={search}"),
-           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
+           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q"),
+           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search")
         ]])
         k = await msg.reply(f"Hey, Your word <b>{search}</b> is No Movie/Series Related to the Given Word Was Found 🥺\n\n<s>Please Go to Google and Confirm the Correct Spelling 🥺🙏</s>", reply_markup=button)
         await asyncio.sleep(60)
