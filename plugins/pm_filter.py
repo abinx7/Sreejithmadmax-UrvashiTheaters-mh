@@ -361,13 +361,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
-        mention = query.from_user.first_name
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                       query.from_user.first_name='' if mention is None else mention,
+                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,                                                       
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
             except Exception as e:
@@ -416,26 +414,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             return await query.answer('No such file exist.')
         files = files_[0]
         title = files.file_name
-        size = get_size(files.file_size)
-        mention = query.from_user.first_name
+        size = get_size(files.file_size)      
         f_caption = files.caption
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                       query.from_user.first_name='' if mention is None else mention,
+                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,                                                       
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
                 f_caption = f_caption
                 size = size
-                mention = mention
         if f_caption is None:
             f_caption = f"{title}"
         if size is None:
             size = f"{size}"
-        if mention is None:
-            mention = f"{mention}"
         buttons = [
                     [
                         InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
