@@ -729,14 +729,6 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
 
-    btn.insert(0, 
-        [
-            InlineKeyboardButton(f'🎁 ɪɴꜰᴏ', 'movieinfo'),
-            InlineKeyboardButton(f'🕊️ ᴍᴏᴠɪᴇ 🕊️', 'movss'),
-            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🎁', 'moviis')
-        ]
-    )
-
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
