@@ -144,14 +144,14 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(f"Hey {query.from_user.first_name} WTF!Dont Click Others Button (Illegal🔞)", show_alert=True)
+        return await query.answer("okDa", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer(f'{query.from_user.first_name} Bro Please Wait🕊️')
+    await query.answer('Checking for Movie in database...')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -159,8 +159,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b>〓〓Movie Not available Reasons〓〓\n\n<i>★ O.T.T Or DVD Not Released\n\n★ Type Name With Year</i> \n\n★ Movie Is Not Available in the database\n\n〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n\n● Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\n\n● ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ [UrvashiTheaters](https://t.me/UrvashiTheaters)</b>')
-            await asyncio.sleep(30)
+            k = await query.message.edit('This Movie Not Found In DataBase')
+            await asyncio.sleep(10)
             await k.delete()
 
 @Client.on_callback_query()
