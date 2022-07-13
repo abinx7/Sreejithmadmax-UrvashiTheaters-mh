@@ -37,24 +37,29 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-            InlineKeyboardButton('📮 Qᴜᴇʀʏ', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('🎁 ɪɴꜰᴏ', url='https://t.me/UrvashiTheaters')
+            InlineKeyboardButton('🍁 ɢʀᴏᴜᴘ 🍁', url='https://t.me/UrvashiTheaters')
+            ],[   
+            InlineKeyboardButton('☘️ ᴏᴡɴᴇʀ ☘️', url='https://t.me/PowerOfTG')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In\n\n〓〓〓 <u>{message.chat.title} </u>〓〓〓❣️\n\n</b>",
+        await message.reply_video(
+            video="https://telegra.ph/file/f264ce1113efb81c8a682.mp4",
+            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 {message.chat.title} 💖</b>",
             reply_markup=reply_markup)
     else:
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            for u in message.new_chat_members:
+        for u in message.new_chat_members:
+                buttons = [[
+                InlineKeyboardButton('🔰 ɢʀᴏᴜᴘ ʀᴜʟᴇs 🔰', url="https://telegra.ph/RULES-OF-12-22")
+            ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
-
+                temp.MELCOW['welcome'] = await message.reply_video(
+                video="https://telegra.ph/file/922ba803c3e701590dc97.mp4",
+                caption=f"<b>🔖 ʜᴇʟʟᴏ {u.mention},</b><b> ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ </b><b>{message.chat.title} 👋🏻</b>",
+                reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
