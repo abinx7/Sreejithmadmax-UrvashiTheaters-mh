@@ -720,7 +720,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(f"Hey {query.from_user.first_name} വീണ്ടും കൗതുകം ആണോ... 😂Dont Repeat Again😒", True)
     elif query.data == "neosub":
         await query.answer(f"{query.from_user.first_name} ബ്രോ ഫയൽസ് ലിങ്ക് ബട്ടനിൽ മാത്രം ക്ലിക്ക് ചെയ്യൂ 😒... \n\nകൗതുകം ലേശം കൂടുതലായതുകൊണ്ടാണോ...എല്ലാ ബട്ടണും ട്രൈ ചെയ്യുന്നേ..😂",show_alert=True)
-    except: pass
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
