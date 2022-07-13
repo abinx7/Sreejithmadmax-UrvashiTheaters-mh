@@ -159,8 +159,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b>〓〓Movie Not available Reasons〓〓\n\n<i>★ O.T.T Or DVD Not Released\n\n★ Type Name With Year</i> \n\n★ Movie Is Not Available in database\n\n〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n\n● Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\n\n● ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ [UrvashiTheaters](https://t.me/UrvashiTheaters)</b>')
-            await asyncio.sleep(30)
+            k = await query.message.edit('<b>📕 ᴘʟᴇᴀꜱᴇ ᴍᴇꜱꜱᴀɢᴇ ʜᴇʀᴇ👉 <a href=https://t.me/UrvashiTheaters_Requests>◥ʊʀʋǟֆɦɨ ȶɦɛǟȶɛʀֆ◤</a>ᴛᴏ ᴀᴅᴅ ᴛʜɪꜱ ᴍᴏᴠɪᴇ🤝</b>')
+            await asyncio.sleep(20)
             await k.delete()
 
 @Client.on_callback_query()
@@ -555,6 +555,48 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "mal":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.MAL_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        
+    elif query.data == "tml":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.TML_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        
+    elif query.data == "eng":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.ENG_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "hnd":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.HND_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
@@ -576,6 +618,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "try":            
+        btn = [[
+            InlineKeyboardButton('🔍 ᴄʜᴇᴄᴋ ɢᴏᴏɢʟᴇ ꜰɪʀꜱᴛ 🔍', url=f'https://google.com/search?q=')
+        ],[
+            InlineKeyboardButton('ᴍᴀʟ', callback_data='mal'),
+            InlineKeyboardButton('ᴛᴀᴍ', callback_data='tml'),
+            InlineKeyboardButton('ᴇɴɢ', callback_data='eng'),
+            InlineKeyboardButton('ʜɴᴅ', callback_data='hnd')
+        ],[
+            InlineKeyboardButton('🗣️ ʀᴇQᴜᴇꜱᴛ ʜᴇʀᴇ 🗣️', url='https://t.me/UrvashiTheaters_Requests') 
+        ]]
+        await query.message.edit_text(text=script.SPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
+
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
@@ -680,7 +735,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(f"Hey {query.from_user.first_name} വീണ്ടും കൗതുകം ആണോ... 😂Dont Repeat Again😒", True)
     elif query.data == "neosub":
         await query.answer(f"{query.from_user.first_name} ബ്രോ ഫയൽസ് ലിങ്ക് ബട്ടനിൽ മാത്രം ക്ലിക്ക് ചെയ്യൂ 😒... \n\nകൗതുകം ലേശം കൂടുതലായതുകൊണ്ടാണോ...എല്ലാ ബട്ടണും ട്രൈ ചെയ്യുന്നേ..😂",show_alert=True)
-    try: await query.answer('Piracy Is Crime') 
     except: pass
 
 async def auto_filter(client, msg, spoll=False):
@@ -824,9 +878,15 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("<b>★ Movie Is Not Available in the database\n\n〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n\n● Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\n\n● ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ [UrvashiTheaters](https://t.me/UrvashiTheaters)</b>")
-        await asyncio.sleep(30)
+        btn = [[
+            InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='try')
+            ],[   
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
+        ]]        
+        k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(20)
         await k.delete()
+        await msg.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -853,23 +913,29 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply_photo("<b>★ Movie Is Not Available in the database\n\n〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓\n\n● Please Messgae Here👉 @UrvashiTheaters_Requests To Add This Movie To My Database\n\n● ഈ സിനിമ എന്റെ ഡാറ്റബേസിൽ ഇല്ല @UrvashiTheaters_Requests ജോയിൻ ചെയ്ത് ആഡ്ആക്കാൻ മെസ്സേജ് അയക്കൂ\n\n©️ [UrvashiTheaters](https://t.me/UrvashiTheaters)</b>")
-        await asyncio.sleep(30)
+        btn = [[
+            InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='try')
+            ],[   
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
+        ]]        
+        k=await msg.reply_photo(photo="https://telegra.ph/file/f5d411fba25ecfa5197fe.jpg",caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(20)
         await k.delete()
+        await msg.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="🚫 Close 🚫", callback_data=f'spolling#{user}#close_spellcheck')])
+        InlineKeyboardButton(text=movie.strip(), callback_data=f"spolling#{user}#{k}",)]for k, movie in enumerate(movielist)]
+    btn.append([InlineKeyboardButton(text="✘ ᴍᴜꜱᴛ ᴄʟᴏꜱᴇ ✘", callback_data=f'spolling#{user}#close_spellcheck')])
     btn.insert(0,
-        [InlineKeyboardButton("📮 ഉർവശിതീയറ്റേഴ്‌സ് 📮", url="https://t.me/UrvashiTheaters")]
+        [InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='try')]
     )
-    await msg.reply_photo(photo="https://telegra.ph/file/c0a6b8a690912453bfdd4.jpg", caption="<b><u><i>📣 I couldn't find anything related to that Did you mean any one of these?\n\n📣 നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b></u>",
-                    reply_markup=InlineKeyboardMarkup(btn))
+    k=await msg.reply_photo(photo="https://telegra.ph/file/f5d411fba25ecfa5197fe.jpg", caption="<b>✯ നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക\n✯ അല്ലാത്ത പക്ഷം <u>Instruction</u> ബട്ടനിൽ ക്ലിക്ക് ചെയ്യുക...</b>\n➖➖➖➖➖➖➖➖➖➖➖➖➖️➖️➖️\n<b>✯ ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?\n✯ ᴏʀ ᴄʟɪᴄᴋ<u>INSTRUCTION</u> ʙᴜᴛᴛᴏɴ\n\n📯 ɴʙ:ᴄʟɪᴄᴋ ᴛʜᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴏɴʟʏ ᴅᴏɴᴛ ᴜꜱᴇ ʏᴇᴀʀ ʙᴜᴛᴛᴏɴ </b>",
+                      reply_markup=InlineKeyboardMarkup(btn))
+    await asyncio.sleep(60)
+    await k.delete()
+    await msg.delete()
+                    
 
 
 async def manual_filters(client, message, text=False):
