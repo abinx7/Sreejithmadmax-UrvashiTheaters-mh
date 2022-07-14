@@ -58,15 +58,15 @@ Pay attention to the following…
 
 ⍟───[ 📢 ᴜʀᴠᴀꜱʜɪ ᴛʜᴇᴀᴛᴇʀꜱ 📢 ]───⍟</b>
 """
-    HELP_TXT = """𝙷𝙴𝚈 {}
-𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
+    HELP_TXT = """<b>ʜᴇʏ  {} ʙʀᴏ! \n
+ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ʜᴇʟᴘ ꜰᴏʀ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ."""
 
     ABOUT_TXT = """<b>🤖 ᴍʏ ɴᴀᴍᴇ: <a href=https://t.me/Imdbfilter_bot>『 ƈɨռɖɛʀɛʟʟǟ™ 』</b></a>
-👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>
-📝 ʟᴀɴɢᴜᴀɢᴇ : <a href=https://t.me/UrvashiTheaters>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
-💾 ᴅᴀᴛᴀ ʙᴀꜱᴇ : <a href=https://t.me/UrvashiTheaters>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>
-📡 ʙᴏᴛ ꜱᴇʀᴠᴇʀ : <a href=https://t.me/UrvashiTheaters>𝙷𝙴𝚁𝙾𝙺𝚄</a>
-🛠️ ʙᴜɪʟᴅ ꜱᴛᴀᴛᴜꜱ : <a href=https://t.me/UrvashiTheaters>v1.0.1 [ 𝙱𝙴𝚃𝙰 ]</b></a>"""
+👨‍💻 <b>ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/TeamEvamaria>Team Eva Maria</a></b>
+📝 <b>ʟᴀɴɢᴜᴀɢᴇ : <a href=https://t.me/UrvashiTheaters>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a></b>
+💾 <b>ᴅᴀᴛᴀ ʙᴀꜱᴇ : <a href=https://t.me/UrvashiTheaters>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a></b>
+📡 <b>ʙᴏᴛ ꜱᴇʀᴠᴇʀ : <a href=https://t.me/UrvashiTheaters>𝙷𝙴𝚁𝙾𝙺𝚄</a></b>
+🛠️ <b>ʙᴜɪʟᴅ ꜱᴛᴀᴛᴜꜱ : <a href=https://t.me/UrvashiTheaters>v1.0.1 [ 𝙱𝙴𝚃𝙰 ]</b></a>"""
 
     SOURCE_TXT = """<b>NOTE:</b>
 - Eva Maria is a open source project. 
@@ -74,41 +74,45 @@ Pay attention to the following…
 
 <b>DEVS:</b>
 - <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>"""
-    MANUELFILTER_TXT = """Help: <b>Filters</b>
+    MANUELFILTER_TXT = """<u><b>ᴍᴀɴᴜᴀʟ ꜰɪʟᴛᴇʀꜱ</b></u>
 
-- Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
+- ꜰɪʟᴛᴇʀ ɪꜱ ᴛʜᴇ ꜰᴇᴀᴛᴜʀᴇ ᴡᴇʀᴇ ᴜꜱᴇʀꜱ ᴄᴀɴ ꜱᴇᴛ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʀᴇᴘʟɪᴇꜱ ꜰᴏʀ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴋᴇʏᴡᴏʀᴅ ᴀɴᴅ ƈɨռɖɛʀɛʟʟǟ™ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ᴡʜᴇɴᴇᴠᴇʀ ᴀ ᴋᴇʏᴡᴏʀᴅ ɪꜱ ꜰᴏᴜɴᴅ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ
 
-<b>NOTE:</b>
-1. eva maria should have admin privillage.
-2. only admins can add filters in a chat.
-3. alert buttons have a limit of 64 characters.
+<b><u>ʀᴇQᴜɪʀᴇᴍᴇɴᴛꜱ</u></b>
+1. ƈɨռɖɛʀɛʟʟǟ™ 𝚜𝚑𝚘𝚞𝚕𝚍 𝚑𝚊𝚟𝚎 𝚊𝚍𝚖𝚒𝚗 𝚙𝚛𝚒𝚟𝚒𝚕𝚕𝚊𝚐𝚎.
+2. 𝚘𝚗𝚕𝚢 𝚊𝚍𝚖𝚒𝚗𝚜 𝚌𝚊𝚗 𝚊𝚍𝚍 𝚏𝚒𝚕𝚝𝚎𝚛𝚜 𝚒𝚗 𝚊 𝚌𝚑𝚊𝚝.
+3. 𝚊𝚕𝚎𝚛𝚝 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚑𝚊𝚟𝚎 𝚊 𝚕𝚒𝚖𝚒𝚝 𝚘𝚏 𝟼𝟺 𝚌𝚑𝚊𝚛𝚊𝚌𝚝𝚎𝚛𝚜.
 
-<b>Commands and Usage:</b>
+<b><u>ᴄᴏᴍᴍᴀɴᴅꜱ ᴀɴᴅ ᴜꜱᴀɢᴇ</u></b>
 • /filter - <code>add a filter in chat</code>
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
+    BUTTON_TXT = """<b><u>ʙᴜᴛᴛᴏɴꜱ</b></u>
 
-- Eva Maria Supports both url and alert inline buttons.
+- ƈɨռɖɛʀɛʟʟǟ™ 𝚂𝚞𝚙𝚙𝚘𝚛𝚝𝚜 𝚋𝚘𝚝𝚑 𝚞𝚛𝚕 𝚊𝚗𝚍 𝚊𝚕𝚎𝚛𝚝 𝚒𝚗𝚕𝚒𝚗𝚎 𝚋𝚞𝚝𝚝𝚘𝚗𝚜.
 
 <b>NOTE:</b>
-1. Telegram will not allows you to send buttons without any content, so content is mandatory.
-2. Eva Maria supports buttons with any telegram media type.
-3. Buttons should be properly parsed as markdown format
+1. 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚠𝚒𝚕𝚕 𝚗𝚘𝚝 𝚊𝚕𝚕𝚘𝚠𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚜𝚎𝚗𝚍 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚠𝚒𝚝𝚑𝚘𝚞𝚝 𝚊𝚗𝚢 𝚌𝚘𝚗𝚝𝚎𝚗𝚝, 𝚜𝚘 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 𝚒𝚜 𝚖𝚊𝚗𝚍𝚊𝚝𝚘𝚛𝚢.
+2. ƈɨռɖɛʀɛʟʟǟ™ 𝚜𝚞𝚙𝚙𝚘𝚛𝚝𝚜 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚠𝚒𝚝𝚑 𝚊𝚗𝚢 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚖𝚎𝚍𝚒𝚊 𝚝𝚢𝚙𝚎.
+3. 𝙱𝚞𝚝𝚝𝚘𝚗𝚜 𝚜𝚑𝚘𝚞𝚕𝚍 𝚋𝚎 𝚙𝚛𝚘𝚙𝚎𝚛𝚕𝚢 𝚙𝚊𝚛𝚜𝚎𝚍 𝚊𝚜 𝚖𝚊𝚛𝚔𝚍𝚘𝚠𝚗 𝚏𝚘𝚛𝚖𝚊𝚝.
 
-<b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/EvaMariaBot)</code>
+<b><u>ᴜʀʟ ʙᴜᴛᴛᴏɴꜱ</u></b>
+<code>[Button Text](buttonurl:link)</code>
 
-<b>Alert buttons:</b>
+<b><u>ᴀʟᴇʀᴛ ʙᴜᴛᴛᴏɴꜱ</u></b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
     AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
 
-<b>NOTE:</b>
-1. Make me the admin of your channel if it's private.
-2. make sure that your channel does not contains camrips, porn and fake files.
-3. Forward the last message to me with quotes.
- I'll add all the files in that channel to my db."""
+<b><u>ᴍᴜꜱᴛ ʀᴇᴀᴅ</u></b>
+1.<b> നിങ്ങൾക്ക്  സിനിമ ഗ്രൂപ്പ്‌ ഉണ്ടോ സിനിമ ഫയലുകൾ സെർച്ച്‌ ചെയ്ത് കണ്ട് പിടിച്ചു ഗ്രൂപ്പിൽ അയച്ചു ബുദ്ധിമുട്ടുന്നുണ്ടോ....ഇനി ഒന്നുകൊണ്ടും പേടിക്കണ്ട....</b>
+2. <b><a href=http://t.me/Imdbfilter_bot?startgroup=true><b>➕️ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️</b></a>എന്ന ലിങ്കിലോ ബട്ടണിലോ ക്ലിക്ക് ചെയ്ത് ബോട്ട് ഗ്രൂപ്പിൽ അഡ്മിൻ ആകുക...</b>
+3. <b>പിന്നെ സിനിമകൾ എല്ലാം ബോട്ട് തരുന്നതായിരിക്കും</b>
+<b><u>ᴍᴜꜱᴛ ʀᴇᴀᴅ[ᴇɴɢ]</u></b>
+1.<b>𝙸𝚝𝚜 𝚅𝚎𝚛𝚢 𝙴𝚊𝚜𝚢..𝙹𝚞𝚜𝚝  <a href=http://t.me/Imdbfilter_bot?startgroup=true><b>➕️ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️</b></a> 𝚆𝚒𝚝𝚑 𝙰𝚍𝚖𝚒𝚗 𝚁𝚒𝚐𝚑𝚝𝚜.. </b>
+2.<b>𝚃𝙷𝙴𝙽 𝙸 𝚆𝚒𝚕𝚕 𝙿𝚛𝚘𝚟𝚒𝚍𝚎 𝙼𝚘𝚟𝚒𝚎𝚜 𝚃𝚑𝚎𝚛𝚎...</b>
+3.<b><u>𝙽𝙱 </u>:𝙱𝙾𝚃 𝙼𝚄𝚂𝚃 𝙱𝙴 𝙸𝙽 𝙰𝙳𝙼𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿..</b>
+"""
     CONNECTION_TXT = """Help: <b>Connections</b>
 
 - Used to connect bot to PM for managing filters 
