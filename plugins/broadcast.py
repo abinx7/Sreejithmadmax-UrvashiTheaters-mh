@@ -5,12 +5,6 @@ from database.users_chats_db import db
 from info import ADMINS
 from utils import broadcast_messages
 import asyncio
-
-   buttons = [[
-            InlineKeyboardButton('🍁 ʜᴇʟᴘ 🍁', url='https://t.me/PowerOfTG')
-            ],[   
-            InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
-        ]]
            
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # https://t.me/GetTGLink/4178
@@ -19,9 +13,7 @@ async def verupikkals(bot, message):
     b_msg = message.reply_to_message
     sts = await message.reply_photo(
         photo="https://telegra.ph/file/496efac0e5a65da934d33.jpg",
-        caption='📯 ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ɴᴏᴡ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ',
-        reply_markup=InlineKeyboardMarkup(buttons),
-        reply_markup=reply_markup
+        caption='📯 ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ɴᴏᴡ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ'
     )
     start_time = time.time()
     total_users = await db.total_users_count()
