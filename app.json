@@ -1,7 +1,7 @@
 {
-    "name": "`×[¤DUDE ADHOLOKHAM¤]×´",
+    "name": "ƈɨռɖɛʀɛʟʟǟ™",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
-    "logo": "https://telegra.ph/file/a774e6d1169b0672a5db9.jpg",
+    "logo": "https://telegra.ph/file/4e1f8603901a74db5ef5f.jpg",
     "keywords": [
       "telegram",
       "auto-filter",
@@ -15,7 +15,7 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/EvamariaTG/EvaMaria",
+    "website": "https://t.me/UrvashiTheaters",
     "repository": "https://github.com/EvamariaTG/EvaMaria",
     "env": {
         "BOT_TOKEN": {
