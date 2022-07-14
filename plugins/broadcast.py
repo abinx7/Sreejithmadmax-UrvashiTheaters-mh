@@ -9,10 +9,18 @@ import asyncio
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # https://t.me/GetTGLink/4178
 async def verupikkals(bot, message):
+   buttons = [[
+            InlineKeyboardButton('🍁 ʜᴇʟᴘ 🍁', url='https://t.me/PowerOfTG')
+            ],[   
+            InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
+        ]]
+    reply_markup=InlineKeyboardMarkup(buttons)
     users = await db.get_all_users()
     b_msg = message.reply_to_message
-    sts = await message.reply_text(
-        text='Broadcasting your messages...'
+    sts = await message.reply_photo(
+        photo="https://telegra.ph/file/496efac0e5a65da934d33.jpg",
+        caption='📯 ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ɴᴏᴡ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ',
+        reply_markup=reply_markup
     )
     start_time = time.time()
     total_users = await db.total_users_count()
