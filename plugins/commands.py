@@ -22,11 +22,21 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
-            InlineKeyboardButton('⚡ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ɢʀᴏᴜᴘ ⚡', url='https://t.me/UrvashiTheaters')
-        ]]
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
+      [
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url="https://t.me/UrvashiTheaters"),
+        InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/movies_club_2019")
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await message.reply_photo(
+            photo="https://telegra.ph/file/4e1f8603901a74db5ef5f.jpg",
+            caption=script.START_TXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        await asyncio.sleep(15)
+
+
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -76,9 +86,10 @@ async def start(client, message):
             	btn.append([InlineKeyboardButton("⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", callback_data=f"{pre}#{file_id}")])
             except IndexError:
                 btn.append([InlineKeyboardButton("⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
-        await client.send_message(
+        await client.send_photo(
+            photo="https://telegra.ph/file/4e1f8603901a74db5ef5f.jpg",       
             chat_id=message.from_user.id,
-            text="**--♦️ READ THIS INSTRUCTION ♦️--\n\n🗣 നിങ്ങൾ ചോദിക്കുന്ന സിനിമകൾ നിങ്ങൾക്ക് ലഭിക്കണം എന്നുണ്ടെങ്കിൽ നിങ്ങൾ ഞങ്ങളുടെ ചാനലിൽ ജോയിൻ ചെയ്തിരിക്കണം.ജോയിൻ ചെയ്യാൻ --(📢 Join Channel 📢)-- എന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്യാവുന്നതാണ്.\n🗣 ജോയിൻ ചെയ്ത ശേഷം --(🔄 Try Again 🔄)-- എന്ന ബട്ടണിൽ അമർത്തിയാൽ നിങ്ങൾക്ക് ഞാൻ ആ സിനിമ ഫയൽ അയച്ചു തരുന്നതാണ്..😍\n\n🗣 In Order To Get The Movie Requested By You in Our Group, You Must Have To Join Our Official Channel First By Clicking (📢 Join Channel 📢) Button.🗣 After That, Click --(🔄 Try Again 🔄)-- Button. I'll Send You That Movie File📂**",
+            caption="**--♦️ READ THIS INSTRUCTION ♦️--\n\n🗣 നിങ്ങൾ ചോദിക്കുന്ന സിനിമകൾ നിങ്ങൾക്ക് ലഭിക്കണം എന്നുണ്ടെങ്കിൽ നിങ്ങൾ ഞങ്ങളുടെ ചാനലിൽ ജോയിൻ ചെയ്തിരിക്കണം.ജോയിൻ ചെയ്യാൻ --(📢 Join Channel 📢)-- എന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്യാവുന്നതാണ്.\n🗣 ജോയിൻ ചെയ്ത ശേഷം --(🔄 Try Again 🔄)-- എന്ന ബട്ടണിൽ അമർത്തിയാൽ നിങ്ങൾക്ക് ഞാൻ ആ സിനിമ ഫയൽ അയച്ചു തരുന്നതാണ്..😍\n\n🗣 In Order To Get The Movie Requested By You in Our Group, You Must Have To Join Our Official Channel First By Clicking (📢 Join Channel 📢) Button.🗣 After That, Click --(🔄 Try Again 🔄)-- Button. I'll Send You That Movie File📂**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
