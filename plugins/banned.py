@@ -28,7 +28,7 @@ async def ban_reply(bot, message):
     ban = await db.get_ban_status(message.from_user.id)
     await message.reply_photo(
         photo="https://telegra.ph/file/081b05208660838215e7e.jpg",
-        caption=f"ꜱᴏʀʀʏ ᴅᴜᴅᴇ 😪..ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜꜱᴇ ᴍᴇʜ! \n\n📕 ʀᴇᴀꜱᴏɴ: {ban["ban_reason"]}",
+        caption="hai",
         reply_markup=reply_markup)
 
 @Client.on_message(filters.group & disabled_group & filters.incoming)
