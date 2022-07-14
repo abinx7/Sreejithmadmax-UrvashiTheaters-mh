@@ -225,3 +225,19 @@ async def unban_a_user(bot, message):
         temp.BANNED_USERS.remove(k.id)
         await message.reply(f"Successfully unbanned {k.mention}")
 
+@Client.on_message(filters.command('groups') & filters.user(ADMINS))
+async def list_chats(bot, message):
+    raju = await message.reply('🔍 ꜰᴇᴛᴄʜɪɴɢ ɢʀᴏᴜᴘꜱ ɪɴꜰᴏ 🔍')
+    chats = await db.get_all_chats()
+    out = "Chats Saved In DB Are:\n\n"
+    async for chat in chats:
+        out += f"<b><u>📡 {chat['title']}</u></b>"
+        if chat['chat_status']['is_disabled']:
+            out += '( Disabled Chat )'
+        out += '\n'
+    try:
+        await raju.edit_text(out)
+    except MessageTooLong:
+        with open('chats.txt', 'w+') as outfile:
+            outfile.write(out)
+        await message.reply_document('ƈɨռɖɛʀɛʟʟǟ™.txt', caption="⚕️ ᴄɪɴᴅᴇʀᴇʟʟᴀ ᴜꜱᴇᴅ ɢʀᴏᴜᴘꜱ ɴᴀᴍᴇꜱ ɪɴ ᴅᴏᴄᴜᴍᴇɴᴛ\n\n©️ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @UrvashiTheaters")
