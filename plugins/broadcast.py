@@ -14,12 +14,13 @@ async def verupikkals(bot, message):
             ],[   
             InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
         ]]
-    reply_markup=InlineKeyboardMarkup(buttons),
+
     users = await db.get_all_users()
     b_msg = message.reply_to_message
     sts = await message.reply_photo(
         photo="https://telegra.ph/file/496efac0e5a65da934d33.jpg",
         caption='📯 ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ɴᴏᴡ ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ',
+        reply_markup=InlineKeyboardMarkup(buttons),
         reply_markup=reply_markup
     )
     start_time = time.time()
