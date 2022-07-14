@@ -29,7 +29,7 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
-NORGE_IMG = f"https://telegra.ph/file/49f6a80fe899923450646.jpg"
+NORGE_IMG = f"https://telegra.ph/file/6e30e681232091bab9b92.jpg"
 
 @Client.on_message(filters.group & filters.text & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
@@ -151,7 +151,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Finding Best Results🕊️🕊️...')
+    await query.answer('🔍 ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ.. ꜰɪɴᴅɪɴɢ!...', show_alert=True)
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -372,15 +372,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
-                    [
-                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
-                    ],
-                    [
-                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='spellingg')
-                    ]
-                    ]
+        buttons = [[
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
+      [
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
+        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
+    ]]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -428,15 +425,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{title}"
         if size is None:
             size = f"{size}"
-        buttons = [
-                    [
-                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters")
-                    ],
-                    [
-                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='spellingg')
-                    ]
-                    ]
+        buttons = [[
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
+      [
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
+        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
+    ]]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -464,7 +458,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-        await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons= [[
             InlineKeyboardButton('📀 ᴍᴀɴᴜᴀʟ ғɪʟᴛᴇʀ', callback_data='manuelfilter')
@@ -472,7 +465,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔖 ᴀᴜᴛᴏ ғʟɪᴛᴇʀ', callback_data='autofilter')
             ],[
             InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('⛔ ᴄʟᴏsᴇ', callback_data="close_pages")
+            InlineKeyboardButton('🍁 ꜱᴛᴀᴛꜱ', callback_data="stats")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -656,8 +649,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='start'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('ʀᴇꜰʀᴇꜱʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -673,10 +666,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
+        await query.answer("⏳️ ʀᴇꜰʀᴇꜱʜɪʙɢ ᴅᴀᴛᴀʙᴀꜱᴇ ⏳️")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('ʀᴇꜰʀᴇꜱʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
