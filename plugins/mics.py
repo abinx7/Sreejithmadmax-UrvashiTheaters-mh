@@ -146,7 +146,7 @@ async def imdb_search(client, message):
         ]
         await k.edit('📡 ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ʀᴇꜱᴜʟᴛ... ᴀɴᴅ ᴄʟɪᴄᴋ ʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛᴇᴅ ᴏɴᴇ', reply_markup=InlineKeyboardMarkup(btn))
     else:
-        await message.reply_photo(photo='https://telegra.ph/file/bf9e4111de1f99080b372.jpg')
+        await message.reply_photo(photo='https://telegra.ph/file/bf9e4111de1f99080b372.jpg', caption="🧐 ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ᴍᴏᴠɪᴇ ɪɴꜰᴏ?\n\n👇 ꜱᴇᴀʀᴄʜ ʟɪᴋᴇ ᴛʜɪꜱ\n\n<u>✔️ /ɪᴍᴅʙ ᴀᴠᴇɴɢᴇʀꜱ</u>")
 
 @Client.on_callback_query(filters.regex('^imdb'))
 async def imdb_callback(bot: Client, quer_y: CallbackQuery):
