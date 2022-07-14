@@ -250,15 +250,12 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    buttons = [
-                    [
-                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-                        InlineKeyboardButton(' sʜᴀʀᴇ 🖇️', url="https://t.me/share/url?url=**😱%20ഉർവശി%20തീയേറ്റർസ്%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@UrvashiTheaters%0A@UrvashiTheaters%0A@UrvashiTheaters**")
-                    ],
-                    [
-                        InlineKeyboardButton(text=f'🔖 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🔖', callback_data='gxneopm')
-                    ]
-                    ]
+    buttons = [[
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
+      [
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
+        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
+    ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
@@ -363,12 +360,12 @@ async def delete_all_index(bot, message):
             [
                 [
                     InlineKeyboardButton(
-                        text="YES", callback_data="autofilter_delete"
+                        text="✔️ YES", callback_data="autofilter_delete"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        text="CANCEL", callback_data="close_data"
+                        text="❌️ CANCEL", callback_data="close_data"
                     )
                 ],
             ]
