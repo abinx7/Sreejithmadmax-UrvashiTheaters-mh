@@ -130,11 +130,11 @@ async def who_is(client, message):
 @Client.on_message(filters.command(["imdb", 'search']))
 async def imdb_search(client, message):
     if ' ' in message.text:
-        k = await message.reply('Searching ImDB')
+        k = await message.reply_photo(photo="https://telegra.ph/file/616d09ad2b3d1b334773b.jpg", caption="🔍 ꜰᴇᴛᴄʜɪɴɢ ᴍᴏᴠɪᴇ ɪɴꜰᴏ 🔍")
         r, title = message.text.split(None, 1)
         movies = await get_poster(title, bulk=True)
         if not movies:
-            return await message.reply("No results Found")
+            return await message.reply_photo(photo="https://telegra.ph/file/081b05208660838215e7e.jpg", caption="❌️ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ Qᴜᴇʀʏ ❌️")
         btn = [
             [
                 InlineKeyboardButton(
@@ -144,9 +144,9 @@ async def imdb_search(client, message):
             ]
             for movie in movies
         ]
-        await k.edit('Here is what i found on IMDb', reply_markup=InlineKeyboardMarkup(btn))
+        await k.edit('📡 ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ʀᴇꜱᴜʟᴛ... ᴀɴᴅ ᴄʟɪᴄᴋ ʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛᴇᴅ ᴏɴᴇ', reply_markup=InlineKeyboardMarkup(btn))
     else:
-        await message.reply('Give me a movie / series Name')
+        await message.reply_stiker(sticker='CAACAgIAAxkBAAEFRKdiz6a_0Yb5A5JD36mGiiMfem1l9wAC4xAAAqch4EmHTbt5tPu_XykE')
 
 @Client.on_callback_query(filters.regex('^imdb'))
 async def imdb_callback(bot: Client, quer_y: CallbackQuery):
@@ -200,7 +200,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             **locals()
         )
     else:
-        caption = "No Results"
+        caption = "❌️ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ Qᴜᴇʀʏ ❌️"
     if imdb.get('poster'):
         try:
             await quer_y.message.reply_photo(photo=imdb['poster'], caption=caption, reply_markup=InlineKeyboardMarkup(btn))
@@ -210,7 +210,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             await quer_y.message.reply_photo(photo=poster, caption=caption, reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            await quer_y.message.reply(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
+            await quer_y.message.reply_photo(photo="https://telegra.ph/file/616d09ad2b3d1b334773b.jpg", caption=caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
         await quer_y.message.delete()
     else:
         await quer_y.message.edit(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
