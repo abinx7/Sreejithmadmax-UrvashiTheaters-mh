@@ -161,12 +161,6 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             ],
             [
                 InlineKeyboardButton(
-                    text=f"🕊️Must Click🕊️",
-                    callback_data="close_pages"
-                )
-            ],
-            [
-                InlineKeyboardButton(
                     text=f"📮ഉർവശി തീയറ്റേർസ്📮",
                     url="https://t.me/UrvashiTheaters"
                 )
