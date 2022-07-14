@@ -5,16 +5,16 @@ from database.users_chats_db import db
 from info import ADMINS
 from utils import broadcast_messages
 import asyncio
-        
-@Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
-# https://t.me/GetTGLink/4178
-async def verupikkals(bot, message):
+
    buttons = [[
             InlineKeyboardButton('🍁 ʜᴇʟᴘ 🍁', url='https://t.me/PowerOfTG')
             ],[   
             InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
         ]]
-
+           
+@Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
+# https://t.me/GetTGLink/4178
+async def verupikkals(bot, message):
     users = await db.get_all_users()
     b_msg = message.reply_to_message
     sts = await message.reply_photo(
