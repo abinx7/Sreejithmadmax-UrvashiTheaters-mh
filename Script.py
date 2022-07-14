@@ -61,9 +61,8 @@ Pay attention to the following…
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
 
-    ABOUT_TXT = """<b>🤖 ᴍʏ ɴᴀᴍᴇ: {}
+    ABOUT_TXT = """<b>🤖 ᴍʏ ɴᴀᴍᴇ: <a href=https://t.me/Imdbfilter_bot>『 ƈɨռɖɛʀɛʟʟǟ™ 』</b></a>
 👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/TeamEvamaria>Team Eva Maria</a>
-📕 ʟɪʙʀᴀʀʏ : <a href=https://t.me/UrvashiTheaters>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>
 📝 ʟᴀɴɢᴜᴀɢᴇ : <a href=https://t.me/UrvashiTheaters>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
 💾 ᴅᴀᴛᴀ ʙᴀꜱᴇ : <a href=https://t.me/UrvashiTheaters>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>
 📡 ʙᴏᴛ ꜱᴇʀᴠᴇʀ : <a href=https://t.me/UrvashiTheaters>𝙷𝙴𝚁𝙾𝙺𝚄</a>
