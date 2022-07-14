@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://telegra.ph/file/a774e6d1169b0672a5db9.jpg" alt="ʜᴇɪsᴇɴ ʟᴏɢᴏ">
+  <img src="https://telegra.ph/file/4e1f8603901a74db5ef5f.jpg" alt="ʜᴇɪsᴇɴ ʟᴏɢᴏ">
 </p>
 <h1 align="center">
-  <b>ᴳᴬᴺᴳᴬ ᴬᴰᴴᴼᴸᴼᴷᴴᴬᴹ</b>
+  <b>ƈɨռɖɛʀɛʟʟǟ™</b>
 </h1>
 
 
