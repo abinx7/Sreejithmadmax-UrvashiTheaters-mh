@@ -107,7 +107,7 @@
         },   
         "USE_CAPTION_FILTER": {
             "description": "Whether bot should use captions to improve search results. (True False)",
-            "value": "True",
+            "value": "False",
             "required": false
         },
         "LONG_IMDB_DESCRIPTION": {
@@ -117,7 +117,7 @@
         },
         "CUSTOM_FILE_CAPTION": {
             "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
-            "value": "<code>{file_name}</code>",
+            "value": "<code>[UT]{file_name}</code>",
             "required": false
         },
         "COLLECTION_NAME": {
