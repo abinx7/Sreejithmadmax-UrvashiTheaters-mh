@@ -19,18 +19,30 @@ disabled_group=filters.create(disabled_chat)
 
 @Client.on_message(filters.private & banned_user & filters.incoming)
 async def ban_reply(bot, message):
+    buttons = [[
+            InlineKeyboardButton('🍁 ʜᴇʟᴘ 🍁', url='https://t.me/PowerOfTG')
+            ],[   
+            InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
+        ]]
+    reply_markup=InlineKeyboardMarkup(buttons)
     ban = await db.get_ban_status(message.from_user.id)
-    await message.reply(f'Sorry Dude, You are Banned to use Me. \nBan Reason: {ban["ban_reason"]}')
+    await message.reply_photo(
+        photo="https://telegra.ph/file/081b05208660838215e7e.jpg"
+        caption=f"ꜱᴏʀʀʏ ᴅᴜᴅᴇ 😪..ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜꜱᴇ ᴍᴇʜ! \n\n📕 ʀᴇᴀꜱᴏɴ: {ban["ban_reason"]}"),
+        reply_markup=reply_markup)
 
 @Client.on_message(filters.group & disabled_group & filters.incoming)
 async def grp_bd(bot, message):
     buttons = [[
-        InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
-    ]]
+            InlineKeyboardButton('🍁 ʜᴇʟᴘ 🍁', url='https://t.me/PowerOfTG')
+            ],[   
+            InlineKeyboardButton('☘️ ɢʀᴏᴜᴘ ☘️', url='https://t.me/UrvashiTheaters')
+        ]]
     reply_markup=InlineKeyboardMarkup(buttons)
     vazha = await db.get_chat(message.chat.id)
-    k = await message.reply(
-        text=f"CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..\nReason : <code>{vazha['reason']}</code>.",
+    k = await message.reply_photo(
+        photo="https://telegra.ph/file/081b05208660838215e7e.jpg"
+        caption=f"ʜᴇʏ! ᴏᴡɴᴇʀ ʜᴀꜱ ʀᴇꜱᴛʀɪᴄᴛᴇᴅ ᴍᴇ ꜰʀᴏᴍ ᴡᴏʀᴋɪɴɢ ʜᴇʀᴇ.... 😒\n\n ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ɪᴛ ᴄᴏɴᴛᴀᴄᴛ ꜱᴜᴘᴘᴏʀᴛ..\n\n📕 ʀᴇᴀꜱᴏɴ : <code>{vazha['reason']}</code>.",
         reply_markup=reply_markup)
     try:
         await k.pin()
