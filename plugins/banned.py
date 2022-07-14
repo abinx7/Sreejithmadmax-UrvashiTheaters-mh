@@ -27,8 +27,8 @@ async def ban_reply(bot, message):
     reply_markup=InlineKeyboardMarkup(buttons)
     ban = await db.get_ban_status(message.from_user.id)
     await message.reply_photo(
-        photo="https://telegra.ph/file/081b05208660838215e7e.jpg"
-        caption=f"ꜱᴏʀʀʏ ᴅᴜᴅᴇ 😪..ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜꜱᴇ ᴍᴇʜ! \n\n📕 ʀᴇᴀꜱᴏɴ: {ban["ban_reason"]}"),
+        photo="https://telegra.ph/file/081b05208660838215e7e.jpg",
+        caption=f"ꜱᴏʀʀʏ ᴅᴜᴅᴇ 😪..ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜꜱᴇ ᴍᴇʜ! \n\n📕 ʀᴇᴀꜱᴏɴ: {ban["ban_reason"]}",
         reply_markup=reply_markup)
 
 @Client.on_message(filters.group & disabled_group & filters.incoming)
@@ -41,7 +41,7 @@ async def grp_bd(bot, message):
     reply_markup=InlineKeyboardMarkup(buttons)
     vazha = await db.get_chat(message.chat.id)
     k = await message.reply_photo(
-        photo="https://telegra.ph/file/081b05208660838215e7e.jpg"
+        photo="https://telegra.ph/file/081b05208660838215e7e.jpg",
         caption=f"ʜᴇʏ! ᴏᴡɴᴇʀ ʜᴀꜱ ʀᴇꜱᴛʀɪᴄᴛᴇᴅ ᴍᴇ ꜰʀᴏᴍ ᴡᴏʀᴋɪɴɢ ʜᴇʀᴇ.... 😒\n\n ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ɪᴛ ᴄᴏɴᴛᴀᴄᴛ ꜱᴜᴘᴘᴏʀᴛ..\n\n📕 ʀᴇᴀꜱᴏɴ : <code>{vazha['reason']}</code>.",
         reply_markup=reply_markup)
     try:
