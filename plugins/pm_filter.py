@@ -448,16 +448,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('👥 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/movies_club_2019'),
-            InlineKeyboardButton('ɢʀᴏᴜᴘ 👥', url='https://t.me/UrvashiTheaters')
-            ],[
-            InlineKeyboardButton('🦋 ꜱᴛᴀᴛꜱ ', callback_data='stats'),
-            InlineKeyboardButton(' ᴀʙᴏᴜᴛ 🦋', callback_data='about')
-            ],[
-            InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ᴛʜᴇ ᴘᴀɢᴇ ❌', callback_data='close_pages')
-        ]]
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+   ],[
+        InlineKeyboardButton('🍁 ᴏᴡɴᴇʀ', callback_data='me'),
+        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/UrvashiTheaters')
+   ],[      
+        InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
+        InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+   ],[
+        InlineKeyboardButton('🔰 ᴄʟᴏꜱᴇ ᴛʜᴇ ᴅᴀᴛᴀ🔰', callback_data='close_pages')   
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -466,14 +466,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
-        buttons = [[
-            InlineKeyboardButton('⚡️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs ⚡️', callback_data='start'),
+        buttons= [[
+            InlineKeyboardButton('📀 ᴍᴀɴᴜᴀʟ ғɪʟᴛᴇʀ', callback_data='manuelfilter')
             ],[
-            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='about'),
-            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/CinimaLokham')
+            InlineKeyboardButton('🔖 ᴀᴜᴛᴏ ғʟɪᴛᴇʀ', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/CLMlinkz'),
-            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_pages')
+            InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('⛔ ᴄʟᴏsᴇ', callback_data="close_pages")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -509,10 +508,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.reply_to_message.delete()
         except:
             pass
-
+ 
+    elif query.data == "manuelfilter":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('ʙᴜᴛᴛᴏɴꜱ', callback_data='button')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.MANUELFILTER_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "button":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='manuelfilter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -522,7 +532,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "autofilter":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -532,7 +542,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "coct":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -590,6 +600,34 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "me":
+        buttons= [[
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', callback_data='owner'),
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.OWNER_TXT2,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )        
+    elif query.data == "owner":
+        buttons = [[       
+            InlineKeyboardButton('ᴡʜᴀᴛꜱᴜᴘ', url='https://wa.me/919072469790?text=Hai%20Bro%2C%20Cinderella%20Is%20The%20One%20Of%20The%20Best%20Bot%20In%20Telegram%F0%9F%92%93'),
+            InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴍ', url='https://t.me/PowerOfTG')
+        ], [
+ 
+            InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="me"),
+            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_pages')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.OWNER_TXT.format(query.from_user.mention),
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
         )
