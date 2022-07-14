@@ -229,7 +229,7 @@ async def unban_a_user(bot, message):
 async def list_chats(bot, message):
     raju = await message.reply('🔍 ꜰᴇᴛᴄʜɪɴɢ ɢʀᴏᴜᴘꜱ ɪɴꜰᴏ 🔍')
     chats = await db.get_all_chats()
-    out = "Chats Saved In DB Are:\n\n"
+    out = "⚕️ ᴄɪɴᴅᴇʀᴇʟʟᴀ ᴜꜱᴇᴅ ɢʀᴏᴜᴘꜱ\n➖️➖️➖️➖️➖️➖️➖️➖️➖️\n\n"
     async for chat in chats:
         out += f"<b><u>📡 {chat['title']}</u></b>"
         if chat['chat_status']['is_disabled']:
