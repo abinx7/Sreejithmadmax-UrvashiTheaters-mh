@@ -44,7 +44,7 @@ async def save_group(bot, message):
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_video(
             video="https://telegra.ph/file/f264ce1113efb81c8a682.mp4",
-            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 {message.chat.title} 💖</b>",
+            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 𝙼𝙴 𝙸𝙽 \n\n{message.chat.title} 💖\n\n📕 ɴʙ: ɪꜰ ʏᴏᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ɪɴ [ƈɨռɖɛʀɛʟʟǟ™] ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @PowerOfTG</b>",
             reply_markup=reply_markup)
     else:
         for u in message.new_chat_members:
@@ -57,8 +57,8 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_video(
-                video="https://telegra.ph/file/922ba803c3e701590dc97.mp4",
-                caption=f"<b>🔖 ʜᴇʟʟᴏ {u.mention},</b><b> ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ </b><b>{message.chat.title} 👋🏻</b>",
+                video="https://telegra.ph/file/e2a03c49a7450ac4106b4.mp4",
+                caption=f"<b>🔖 ʜᴇʟʟᴏ {u.mention},\n\n</b><b>🤝 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ </b>\n\n<b>📡 {message.chat.title} 📡\n\n📕 ɴʙ: ᴘʟᴇᴀꜱᴇ ꜱʜᴀʀᴇ ᴏᴜʀ ɢʀᴏᴜᴘ ʟɪɴᴋ..... ᴍᴀᴋᴇ ꜱᴜᴘᴘᴏʀᴛ💓</b>",
                 reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
