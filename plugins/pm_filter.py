@@ -9,7 +9,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, SUPPORT_CHAT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -105,7 +105,7 @@ async def next_page(bot, query):
              InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data="close_pages")]
         )
         btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
+            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"'https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
@@ -114,7 +114,7 @@ async def next_page(bot, query):
         btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="neosub"),
                     InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="neosub"),
                     InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
-        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")])
+        btn.append([InlineKeyboardButton("📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"'https://t.me/{SUPPORT_CHAT}")])
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
         )
@@ -127,7 +127,7 @@ async def next_page(bot, query):
             ],
         )
         btn.append(
-            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url="https://t.me/UrvashiTheaters")]
+            [InlineKeyboardButton(f"📣 ഉർവശി തീയറ്റേഴ്‌സ് 📣",url=f"https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
@@ -373,11 +373,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{files.file_name}"
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
-        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
-    ]]
+                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
+            ]]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -426,11 +423,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if size is None:
             size = f"{size}"
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
-        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
-    ]]
+                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
+            ]]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -445,7 +439,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
    ],[
         InlineKeyboardButton('🍁 ᴏᴡɴᴇʀ', callback_data='me'),
-        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/UrvashiTheaters')
+        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}')
    ],[      
         InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -814,7 +808,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="neosub"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="neosub"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
         btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
+            [InlineKeyboardButton(f"{message.chat.title}",url=f"https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
@@ -824,7 +818,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="🚫 ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫", callback_data="neosub")]
         )
         btn.append(
-            [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/UrvashiTheaters")]
+            [InlineKeyboardButton(f"{message.chat.title}",url=f"https://t.me/{SUPPORT_CHAT}")]
         )
         btn.insert(0,
             [InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="reqst11")]
