@@ -44,7 +44,7 @@ async def save_group(bot, message):
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_video(
             video="https://telegra.ph/file/f264ce1113efb81c8a682.mp4",
-            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 𝙼𝙴 𝙸𝙽 \n\n{message.chat.title} 💖\n\n📕 ɴʙ: ɪꜰ ʏᴏᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ɪɴ [ƈɨռɖɛʀɛʟʟǟ™] ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @PowerOfTG</b>",
+            caption=f"<b>💖 𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 𝙵𝙾𝚁 𝙰𝙳𝙳𝙸𝙽𝙶 𝙼𝙴 𝙸𝙽 \n\n{message.chat.title} 💖\n\n📕 ɴʙ: ɪꜰ ʏᴏᴜ ᴡɪʟʟ ꜰɪɴᴅ ᴀɴʏ ᴇʀʀᴏʀ ɪɴ [χєяσχ-𝚉™] ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ @Abin_x_7</b>",
             reply_markup=reply_markup)
     else:
         for u in message.new_chat_members:
@@ -240,4 +240,4 @@ async def list_chats(bot, message):
     except MessageTooLong:
         with open('chats.txt', 'w+') as outfile:
             outfile.write(out)
-        await message.reply_document('ƈɨռɖɛʀɛʟʟǟ™.txt', caption="⚕️ ᴄɪɴᴅᴇʀᴇʟʟᴀ ᴜꜱᴇᴅ ɢʀᴏᴜᴘꜱ ɴᴀᴍᴇꜱ ɪɴ ᴅᴏᴄᴜᴍᴇɴᴛ\n\n©️ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @UrvashiTheaters")
+        await message.reply_document('ƈɨռɖɛʀɛʟʟǟ™.txt', caption="⚕️ χєяσχ-𝚉 ᴜꜱᴇᴅ ɢʀᴏᴜᴘꜱ ɴᴀᴍᴇꜱ ɪɴ ᴅᴏᴄᴜᴍᴇɴᴛ\n\n©️ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @MoviesHubGroup2")
