@@ -24,7 +24,7 @@ async def start(client, message):
         buttons = [[
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
       [
-        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url="https://t.me/UrvashiTheaters"),
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
         InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/movies_club_2019")
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -50,7 +50,7 @@ async def start(client, message):
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
    ],[
         InlineKeyboardButton('🍁 ᴏᴡɴᴇʀ', callback_data='me'),
-        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/UrvashiTheaters')
+        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}')
    ],[      
         InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -99,7 +99,7 @@ async def start(client, message):
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
    ],[
         InlineKeyboardButton('🍁 ᴏᴡɴᴇʀ', callback_data='me'),
-        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/UrvashiTheaters')
+        InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}')
    ],[      
         InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -251,11 +251,8 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ ', url="https://t.me/UrvashiTheaters"),
-        InlineKeyboardButton(' ᴄʟᴏꜱᴇ ⭕️', callback_data="close_pages")
-    ]]
+                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
+            ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
