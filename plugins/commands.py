@@ -22,10 +22,10 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/Imdbfilter_bot?startgroup=true') ] ,
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/Imbd_Evabot?startgroup=true') ] ,
       [
         InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
-        InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/movies_club_2019")
+        InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/MoviesHub_Updates")
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
