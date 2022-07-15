@@ -39,7 +39,7 @@ async def save_group(bot, message):
         buttons = [[
             InlineKeyboardButton('🍁 ɢʀᴏᴜᴘ 🍁', url=f'https://t.me/{SUPPORT_CHAT}')
             ],[   
-            InlineKeyboardButton('☘️ ᴏᴡɴᴇʀ ☘️', url='https://t.me/PowerOfTG')
+            InlineKeyboardButton('☘️ ᴏᴡɴᴇʀ ☘️', url='https://t.me/Abin_x_7')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_video(
@@ -49,7 +49,7 @@ async def save_group(bot, message):
     else:
         for u in message.new_chat_members:
                 buttons = [[
-                InlineKeyboardButton('🔰 ɢʀᴏᴜᴘ ʀᴜʟᴇs 🔰', url="https://telegra.ph/RULES-OF-12-22")
+                InlineKeyboardButton('🔰 ɢʀᴏᴜᴘ ʀᴜʟᴇs 🔰', url="https://telegra.ph/GROUP-RULES-07-15-3")
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
