@@ -878,7 +878,7 @@ async def auto_filter(client, msg, spoll=False):
             await client.send_video(
                 chat_id=message.chat.id,
                 video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> \nBʏ <spoiler>{message.from_user.mention}</spoiler> \nIs Now Cʟᴏꜱᴇᴅ 🗑️\n\n@TmMainChannel",
+                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
                 reply_to_message_id=message.message_id
             )
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -890,7 +890,7 @@ async def auto_filter(client, msg, spoll=False):
             await client.send_video(
                 chat_id=message.chat.id,
                 video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> \nBʏ <spoiler>{message.from_user.mention}</spoiler> \nIs Now Cʟᴏꜱᴇᴅ 🗑️\n\n@TmMainChannel",
+                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
                 reply_to_message_id=message.message_id
             )
         except Exception as e:
@@ -901,7 +901,7 @@ async def auto_filter(client, msg, spoll=False):
             await client.send_video(
                 chat_id=message.chat.id,
                 video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> \nBʏ <spoiler>{message.from_user.mention}</spoiler> \nIs Now Cʟᴏꜱᴇᴅ 🗑️\n\n@TmMainChannel",
+                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
                 reply_to_message_id=message.message_id
             )
     else:
@@ -911,7 +911,7 @@ async def auto_filter(client, msg, spoll=False):
         await client.send_video(
             chat_id=message.chat.id,
             video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-            caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> \nBʏ <spoiler>{message.from_user.mention}</spoiler> \nIs Now Cʟᴏꜱᴇᴅ 🗑️\n\n@TmMainChannel",
+            caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
             reply_to_message_id=message.message_id
         )
     if spoll:
