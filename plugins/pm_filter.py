@@ -872,48 +872,28 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"〓〓〓 <b>[{search}](https://t.me/UrvashiTheaters)</b> 〓〓〓\n\n<b>⭐️ ɪᴍᴅʙ N/A | ⏰ ʀᴜɴ N/A ᴍɪɴ\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : [N/A](https://t.me/MoviesHubGroup2)\n\n● <code>Thriller, Family, Drama</code></b>\n● <code>N/A</code>\n\n📖 sᴛᴏʀʏ : <code>N/A</code>\n\n<b>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ [{message.chat.title}](https://t.me/MoviesHubGroup2)</b>"
     if imdb and imdb.get('poster'):
         try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(300)
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
             await hehe.delete()
-            await client.send_video(
-                chat_id=message.chat.id,
-                video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
-                reply_to_message_id=message.message_id
-            )
+            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(300)
+            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
             await hmm.delete()
-            await client.send_video(
-                chat_id=message.chat.id,
-                video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
-                reply_to_message_id=message.message_id
-            )
+            await message.delete()
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(300)
+            fek = await message.reply_photo(photo="https://telegra.ph/file/a942df989465ab5bd35d8.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
             await fek.delete()
-            await client.send_video(
-                chat_id=message.chat.id,
-                video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-                caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
-                reply_to_message_id=message.message_id
-            )
+            await msg.delete()
     else:
-        fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(300)
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/a942df989465ab5bd35d8.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(600)
         await fuk.delete()
-        await client.send_video(
-            chat_id=message.chat.id,
-            video="https://telegra.ph/file/0cddf1c687a0dbc256313.mp4",
-            caption=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ <code>{search}</code> Is Now Cʟᴏꜱᴇᴅ 🗑️",
-            reply_to_message_id=message.message_id
-        )
+        await msg.delete()
     if spoll:
         await msg.message.delete()
 
