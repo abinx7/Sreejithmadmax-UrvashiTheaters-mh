@@ -866,6 +866,7 @@ async def auto_filter(client, msg, spoll=False):
             plot = imdb['plot'],
             rating = imdb['rating'],
             url = imdb['url'],
+            files = len_results
             **locals()
         )
     else:
