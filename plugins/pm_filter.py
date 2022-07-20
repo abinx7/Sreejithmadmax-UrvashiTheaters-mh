@@ -87,7 +87,7 @@ async def next_page(bot, query):
     btn.insert(0, 
         [
             InlineKeyboardButton(f'🍿 ғɪʟᴇs: {len(files)}', 'reqst1'),
-            InlineKeyboardButton(f'💭 ᴍᴏᴠɪᴇ 💭', 'movss'),
+            InlineKeyboardButton(f'💭 {message.from_user.mention} 💭', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🍿', 'moviis')
         ]
     )
@@ -806,7 +806,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, 
         [
             InlineKeyboardButton(f'🍿 ғɪʟᴇs: {len(files)}', 'reqst1'),
-            InlineKeyboardButton(f'💭 ᴍᴏᴠɪᴇ 💭', 'movss'),
+            InlineKeyboardButton(f'💭 {message.from_user.mention} 💭', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🍿', 'moviis')
         ]
     )
