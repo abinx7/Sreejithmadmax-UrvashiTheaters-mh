@@ -908,7 +908,7 @@ async def auto_filter(client, msg, spoll=False):
 
     else:
 
-        fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
         await asyncio.sleep(600)
 
