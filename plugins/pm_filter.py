@@ -872,7 +872,7 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"〓〓〓 <b>[{search}](https://t.me/UrvashiTheaters)</b> 〓〓〓\n\n<b>⭐️ ɪᴍᴅʙ N/A | ⏰ ʀᴜɴ N/A ᴍɪɴ\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : [N/A](https://t.me/MoviesHubGroup2)\n\n● <code>Thriller, Family, Drama</code></b>\n● <code>N/A</code>\n\n📖 sᴛᴏʀʏ : <code>N/A</code>\n\n<b>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ [{message.chat.title}](https://t.me/MoviesHubGroup2)</b>"
     if imdb and imdb.get('poster'):
         try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            hehe = await message.reply_photo(photo=https://telegra.ph/file/bb8f694df185be4bc367d.jpg.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
             await asyncio.sleep(600)
 
@@ -886,7 +886,7 @@ async def auto_filter(client, msg, spoll=False):
 
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
 
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            hmm = await message.reply_photo(photo=https://telegra.ph/file/bb8f694df185be4bc367d.jpg, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
             await asyncio.sleep(600)
 
